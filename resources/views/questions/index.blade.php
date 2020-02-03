@@ -16,6 +16,8 @@
                 </div>
 
                 <div class="card-body">
+                    @include ('layouts._messages')
+
                     @foreach ($questions as $question)
                     <div class="media">
                         <div class="d-flex flex-column counters">
@@ -31,7 +33,7 @@
                         </div>
                     <div class="media-body">
                     <h3 class="mt-0"><a href="{{ $question->url }}">{{ $question->title }}</a></h3>
-                    <p class-"lead">
+                    <p class="lead">
                     Asked by
                     <a href="{{ $question->user->url }}">{{ $question->user->name }}</a>
                     <small class="text-muted">{{ $question->created_date }}</small>
