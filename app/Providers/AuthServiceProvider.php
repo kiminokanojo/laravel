@@ -25,6 +25,11 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        \Gate::dafine('update-question', function($user, $question){
+            return $user->id == $question->user_id;
+        });
+        \Gate::dafine('delete-question', function($user, $question){
+            return $user->id == $question->user_id;
+        });
     }
 }
